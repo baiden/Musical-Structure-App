@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/favourite"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Home"/>
+
+    <item android:id="@+id/playlistm"
+        android:icon="@drawable/playlist_icon"
+        android:title="Playlist"/>
+
+    <item android:id="@+id/tracksm"
+        android:icon="@drawable/tracks_icon"
+        android:title="Tracks"/>
+
+    <item android:id="@+id/albumm"
+        android:icon="@drawable/albums_icon"
+        android:title="Album"/>
+
+    <item android:id="@+id/artist"
+        android:icon="@drawable/artists_icon"
+        android:title="Artist"/>
+
+</menu>
