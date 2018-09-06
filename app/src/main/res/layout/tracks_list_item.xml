@@ -40,11 +40,13 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/playButton"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:background="@drawable/play_icon"/>
 
     <Button
+        android:id="@+id/optionMenuButton"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:background="@drawable/track_menu_icon"/>

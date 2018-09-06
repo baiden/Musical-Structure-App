@@ -5,7 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.android.musicalstructureapp.Data.Tracks;
@@ -16,6 +18,8 @@ import java.util.ArrayList;
 public class TrackAdapter extends ArrayAdapter<Tracks> {
 
     private static final String Log = TrackAdapter.class.getSimpleName();
+
+    View listItemView;
 
     /**
      * Constructor class of TrackAdapter
@@ -42,10 +46,10 @@ public class TrackAdapter extends ArrayAdapter<Tracks> {
      * @return The View for the position in the AdapterView.
      */
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, final ViewGroup parent) {
 
         // Check if the existing view is being reused, otherwise inflate the view
-        View listItemView = convertView;
+        listItemView = convertView;
         if(listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
                     R.layout.tracks_list_item, parent, false);
@@ -72,8 +76,30 @@ public class TrackAdapter extends ArrayAdapter<Tracks> {
         // set the image to iconView
         iconView.setImageResource(currentTrack.getmImageResourceID());
 
-        // Return the whole list item layout (containing 2 TextViews and an ImageView)
-        // so that it can be shown in the ListView
+
+        Button playButton = (Button) listItemView.findViewById(R.id.playButton);
+        Button optionsMenuButton = (Button) listItemView.findViewById(R.id.optionMenuButton);
+
+        playButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((ListView) parent).performItemClick(v, position, 0); // Let the event be handled in onItemClick()
+            }
+        });
+
+        optionsMenuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((ListView) parent).performItemClick(v, position, 0); // Let the event be handled in onItemClick()
+            }
+        });
+
+        listItemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((ListView) parent).performItemClick(v, position, 0); // Let the event be handled in onItemClick()
+            }
+        });
 
         return listItemView;
     }

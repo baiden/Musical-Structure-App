@@ -36,7 +36,7 @@ public class ArtistActivity extends AppCompatActivity {
 
                 switch (item.getItemId()){
                     case R.id.favourite:
-                        Intent favourtieIntent = new Intent(ArtistActivity.this, NowPlayingActivity.class);
+                        Intent favourtieIntent = new Intent(ArtistActivity.this, FavouritesActivity.class);
                         startActivity(favourtieIntent);
                         break;
 
@@ -51,7 +51,7 @@ public class ArtistActivity extends AppCompatActivity {
                         break;
 
                     case R.id.albumm:
-                        Intent albumIntent = new Intent(ArtistActivity.this, ArtistActivity.class);
+                        Intent albumIntent = new Intent(ArtistActivity.this, AlbumActivity.class);
                         startActivity(albumIntent);
                         break;
 

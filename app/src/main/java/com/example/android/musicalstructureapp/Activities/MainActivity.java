@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
@@ -105,11 +106,24 @@ public class MainActivity extends AppCompatActivity {
 
         listView.setAdapter(trackAdapter);
 
-        listView = getListView();
+//        listView = TrackAdapter.getListView();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String value = (String)trackAdapter.getItemAtPosition(position);
+//                String value = (String)trackAdapter.getItemAtPosition(position);
+                long viewId = view.getId();
+                if (viewId == R.id.playButton) {
+                    YoYo.with(Techniques.Tada)
+                            .duration(700)
+                            .playOn(findViewById(R.id.playButton));
+                    Intent playtrack = new Intent(MainActivity.this, NowPlayingActivity.class);
+                    startActivity(playtrack);
+                } else if (viewId == R.id.optionMenuButton) {
+                    Toast.makeText(MainActivity.this, "Options button clicked", Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent playtrack = new Intent(MainActivity.this, NowPlayingActivity.class);
+                    startActivity(playtrack);
+                }
             }
         });
 
