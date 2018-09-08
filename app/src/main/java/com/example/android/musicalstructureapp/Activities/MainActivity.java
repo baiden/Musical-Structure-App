@@ -1,17 +1,17 @@
 package com.example.android.musicalstructureapp.Activities;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
@@ -24,12 +24,9 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
-//    @BindView(R.id.tracks_text_view) TextView tracks_txt;
-//    @BindView(R.id.album_text_view) TextView albums_txt;
       @BindView(R.id.bottonNavigationView) BottomNavigationView bottomNavMenu;
       @BindView(R.id.list) ListView listView;
 
@@ -46,8 +43,9 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottonNavigationView);
-        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView); //Disables the default transaction in the bottom navigation view
 
+        //Sets onClick listeners on the buttons on the bottom navigation view
         bottomNavMenu.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -85,43 +83,49 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Create an array of tracks using an ArrayList
-        ArrayList<Tracks> track = new ArrayList<Tracks>();
+        final ArrayList<Tracks> track = new ArrayList<Tracks>();
 
-        track.add(new Tracks("All For Me", "FIYA & James Fortune", R.drawable.nb1));
-        track.add(new Tracks("Live Through it", "FIYA & James Fortune", R.drawable.nb1));
-        track.add(new Tracks("For your glory", "FIYA & James Fortune", R.drawable.nb1));
-        track.add(new Tracks("I believe", "FIYA & James Fortune", R.drawable.nb1));
-        track.add(new Tracks("All For Me", "FIYA & James Fortune", R.drawable.nb1));
-        track.add(new Tracks("All For Me", "FIYA & James Fortune", R.drawable.nb1));
-        track.add(new Tracks("All For Me", "FIYA & James Fortune", R.drawable.nb1));
-        track.add(new Tracks("All For Me", "FIYA & James Fortune", R.drawable.nb1));
-        track.add(new Tracks("All For Me", "FIYA & James Fortune", R.drawable.nb1));
-        track.add(new Tracks("All For Me", "FIYA & James Fortune", R.drawable.nb1));
+        //Sets values into the track instance of the Track Class
+        track.add(new Tracks("All For Me", "FIYA & James Fortune", R.drawable.tracks_icon));
+        track.add(new Tracks("Song of God", "Nathaniel Bassey", R.drawable.nb1));
+        track.add(new Tracks("My Everything", "Joe Mettle", R.drawable.tracks_icon));
+        track.add(new Tracks("Bonooni", "Joe Mettle", R.drawable.tracks_icon));
+        track.add(new Tracks("This God is too good", "Nathaniel Bassey", R.drawable.nb1));
+        track.add(new Tracks("Imela", "Nathaniel Bassey", R.drawable.nb1));
+        track.add(new Tracks("Miracle Worker", "Nathaniel Bassey", R.drawable.nb1));
+        track.add(new Tracks("Count your blessings", "Cwesi Oteng", R.drawable.nb1));
+        track.add(new Tracks("Crazy Love", "Akesse Brempong", R.drawable.tracks_icon));
+        track.add(new Tracks("God is working", "Akesse Brempong", R.drawable.tracks_icon));
 
+        final TrackAdapter trackAdapter = new TrackAdapter(this, track); //Puts the values into the TrackAdapter class
 
-        // Create an {@link AndroidFlavorAdapter}, whose data source is a list of
-        // {@link AndroidFlavor}s. The adapter knows how to create list item views for each item
-        // in the list.
-        final TrackAdapter trackAdapter = new TrackAdapter(this, track);
+        listView.setAdapter(trackAdapter); //Displays the data in the TrackAdapter
 
-        listView.setAdapter(trackAdapter);
-
-//        listView = TrackAdapter.getListView();
+        //Sets onClick listeners on the buttons and the listViews
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                String value = (String)trackAdapter.getItemAtPosition(position);
                 long viewId = view.getId();
                 if (viewId == R.id.playButton) {
-                    YoYo.with(Techniques.Tada)
-                            .duration(700)
-                            .playOn(findViewById(R.id.playButton));
+                    Tracks word = track.get(position);
+
                     Intent playtrack = new Intent(MainActivity.this, NowPlayingActivity.class);
+                    playtrack.putExtra("Title",word.getmTrack_title());
+                    playtrack.putExtra("Artist",word.getmArtist_name());
+                    playtrack.putExtra("AlbumImage", word.getmImageResourceID());
                     startActivity(playtrack);
+
                 } else if (viewId == R.id.optionMenuButton) {
                     Toast.makeText(MainActivity.this, "Options button clicked", Toast.LENGTH_SHORT).show();
-                } else {
+                }
+
+                else {
                     Intent playtrack = new Intent(MainActivity.this, NowPlayingActivity.class);
+                    Tracks word = track.get(position);
+
+                    playtrack.putExtra("Title",word.getmTrack_title());
+                    playtrack.putExtra("Artist",word.getmArtist_name());
+                    playtrack.putExtra("AlbumImage", word.getmImageResourceID());
                     startActivity(playtrack);
                 }
             }
@@ -129,5 +133,27 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //Inflates the menu icons
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
 
+    //Sets onClick listeners on the menu icons
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int res_id = item.getItemId();
+
+        if (res_id==R.id.search){
+            Toast.makeText(this, "Search feature is selectly unavailable", Toast.LENGTH_SHORT).show();
+        }
+
+        if (res_id == R.id.options){
+            Toast.makeText(this, "Settings menu is selectly unavailable", Toast.LENGTH_SHORT).show();
+        }
+
+        return true;
+    }
 }

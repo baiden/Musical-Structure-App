@@ -11,14 +11,9 @@
     android:id="@+id/albumGridview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:columnWidth="90dp"
-    android:numColumns="2"
-    android:verticalSpacing="10dp"
-    android:horizontalSpacing="10dp"
     android:stretchMode="columnWidth"
-    android:gravity="center"
-    android:layout_marginTop="100dp"
-    android:layout_marginBottom="50dp"/>
+    android:numColumns="2"
+    style="@style/GridViewTemplate"/>
 
     <include layout="@layout/appbar_layout"/>
 

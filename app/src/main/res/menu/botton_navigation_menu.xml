@@ -4,8 +4,8 @@
 
     <item
         android:id="@+id/favourite"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="Home"/>
+        android:icon="@drawable/like"
+        android:title="Favourites" />
 
     <item android:id="@+id/playlistm"
         android:icon="@drawable/playlist_icon"

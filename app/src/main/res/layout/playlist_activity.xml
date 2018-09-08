@@ -1,7 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#9e9e9e">
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:layout_marginTop="100dp"
+        android:background="#eeeeee">
+
+        <LinearLayout
+            android:id="@+id/directchild"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="8dp"
+                android:gravity="center">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="#333"
+                    android:elevation="@dimen/elevation"
+                    app:cardCornerRadius="4dp">
+
+                    <ImageView
+                        android:id="@+id/recentlyAdded"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_queue_music_black_24dp"
+                        android:contentDescription="@string/current_track_s_image" />
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="@string/recently_added"
+                    android:textAlignment="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="8dp">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:elevation="@dimen/elevation"
+                    app:cardCornerRadius="4dp">
+
+                    <ImageView
+                        android:id="@+id/mostPlayed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/nb1"
+                        android:contentDescription="@string/current_track_s_image" />
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="@string/most_played"
+                    android:textAlignment="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="8dp">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:elevation="@dimen/elevation"
+                    app:cardCornerRadius="4dp">
+
+                    <ImageView
+                        android:id="@+id/recentlyPlayed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/nb1"/>
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="@string/recently_played"
+                    android:textAlignment="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="8dp"
+                android:gravity="center">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:elevation="@dimen/elevation"
+                    app:cardCornerRadius="4dp">
+
+                    <ImageView
+                        android:id="@+id/favourites"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:layout_gravity="center"
+                        android:background="@drawable/like"
+                        android:contentDescription="@string/favourites" />
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="@string/favourites"
+                    android:textAlignment="center"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/createPlaylistBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_playlist"
+        android:fontFamily="sans-serif-light"
+        android:textSize="12sp"
+        android:layout_below="@id/horizontalScrollView1"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="4dp"
+        android:elevation="@dimen/elevation"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/ic_queue_music_black_24dp"
+        android:layout_below="@id/createPlaylistBtn"
+        android:contentDescription="@string/playlist_icon" />
 
     <include layout="@layout/appbar_layout"/>
 </RelativeLayout>

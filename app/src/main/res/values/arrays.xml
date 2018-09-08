@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Album image-->
+    <integer-array name="album_ImageID">
+        <item>@drawable/nb1</item>
+    </integer-array>
+
+    <!--Artist name-->
+    <string-array name="album_Artist">
+        <item>@string/nathaniel_bassey</item>
+        <item>@string/james_Fortune</item>
+    </string-array>
+
+    <!--Artist Image-->
+    <integer-array name="artist_ImageID">
+        <item>@drawable/nb1</item>
+    </integer-array>
+
+    <!--Song Title-->
+    <string-array name="songName">
+        <item>@string/the_son_of_God</item>
+        <item>@string/all_for_me</item>
+        <item>@string/live_through_it</item>
+        <item>@string/I_believe</item>
+        <item>@string/the_son_of_God1</item>
+        <item>@string/the_son_of_God2</item>
+        <item>@string/the_son_of_God2</item>
+        <item>@string/the_son_of_God2</item>
+        <item>@string/the_son_of_God2</item>
+        <item>@string/the_son_of_God2</item>
+    </string-array>
+
+
+</resources>

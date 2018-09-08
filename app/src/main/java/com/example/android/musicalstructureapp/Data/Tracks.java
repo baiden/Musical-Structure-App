@@ -1,5 +1,7 @@
 package com.example.android.musicalstructureapp.Data;
 
+import java.io.Serializable;
+
 public class Tracks {
 
     private String mTrack_title; //Stores the track title
@@ -8,7 +10,6 @@ public class Tracks {
 
     private int mImageResourceID; //Stores the album image
 
-    private int mSongId; //Stores the songs ID
 
 
     /**
@@ -39,7 +40,4 @@ public class Tracks {
         return mImageResourceID;
     }
 
-    public int getmSongId() {
-        return mSongId;
-    }
 }

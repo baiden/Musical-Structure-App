@@ -1,3 +1,27 @@
 <resources>
-    <string name="app_name">Musical Structure App</string>
+    <string name="app_name">musicHub</string>
+
+    <!--Artist name-->
+    <string name="nathaniel_bassey">Nathaniel Bassey</string>
+    <string name="james_Fortune">James Fortune</string>
+
+    <!--Song title-->
+    <string name="the_son_of_God">The Son of God</string>
+    <string name="all_for_me">All For Me</string>
+    <string name="live_through_it">Live Through it</string>
+    <string name="I_believe">I believe</string>
+    <string name="the_son_of_God1">The Son of God</string>
+    <string name="the_son_of_God2">The Son of God</string>
+
+    <string name="searchMenu">Search</string>
+    <string name="settingsMenu">Settings</string>
+    <string name="current_track_s_image">Current Track\'s Image</string>
+    <string name="recently_added">Recently added</string>
+    <string name="most_played">Most played</string>
+    <string name="recently_played">Recently played</string>
+    <string name="favourites">Favourites</string>
+    <string name="favourites">Favourites</string>
+    <string name="create_playlist">CREATE PLAYLIST</string>
+    <string name="playlist_icon">playList icon</string>
+    <string name="album_image">album image</string>
 </resources>
