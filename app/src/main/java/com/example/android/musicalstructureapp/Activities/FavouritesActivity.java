@@ -98,9 +98,9 @@ public class FavouritesActivity extends AppCompatActivity {
                     Tracks word = track.get(position);
 
                     Intent playtrack = new Intent(FavouritesActivity.this, NowPlayingActivity.class);
-                    playtrack.putExtra("Title",word.getmTrack_title());
-                    playtrack.putExtra("Artist",word.getmArtist_name());
-                    playtrack.putExtra("AlbumImage", word.getmImageResourceID());
+                    playtrack.putExtra("Title",word.getTrack_title());
+                    playtrack.putExtra("Artist",word.getArtist_name());
+                    playtrack.putExtra("AlbumImage", word.getImageResourceID());
                     startActivity(playtrack);
 
                 } else if (viewId == R.id.optionMenuButton) {
@@ -111,9 +111,9 @@ public class FavouritesActivity extends AppCompatActivity {
                     Intent playtrack = new Intent(FavouritesActivity.this, NowPlayingActivity.class);
                     Tracks word = track.get(position);
 
-                    playtrack.putExtra("Title",word.getmTrack_title());
-                    playtrack.putExtra("Artist",word.getmArtist_name());
-                    playtrack.putExtra("AlbumImage", word.getmImageResourceID());
+                    playtrack.putExtra("Title",word.getTrack_title());
+                    playtrack.putExtra("Artist",word.getArtist_name());
+                    playtrack.putExtra("AlbumImage", word.getImageResourceID());
                     startActivity(playtrack);
                 }
             }

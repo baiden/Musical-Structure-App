@@ -18,27 +18,27 @@
         </activity>
 
         <activity android:name=".Activities.AlbumActivity"
-            android:label="Album">
+            android:label="@string/albumLabel">
 
         </activity>
 
         <activity android:name=".Activities.FavouritesActivity"
-            android:label="Favourites">
+            android:label="@string/favouritesLabel">
 
         </activity>
 
         <activity android:name=".Activities.ArtistActivity"
-            android:label="Artist">
+            android:label="@string/artistLabel">
 
         </activity>
 
         <activity android:name=".Activities.PlayListActivity"
-            android:label="Playlist">
+            android:label="@string/playListLabel">
 
         </activity>
 
         <activity android:name=".Activities.NowPlayingActivity"
-            android:label="Now Playing">
+            android:label="@string/nowPlayingLabel">
 
         </activity>
     </application>

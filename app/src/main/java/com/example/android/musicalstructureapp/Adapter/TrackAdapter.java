@@ -59,19 +59,19 @@ public class TrackAdapter extends ArrayAdapter<Tracks> {
         TextView trackTitle_txt = (TextView) listItemView.findViewById(R.id.title_text_view);
         // Get the version name from the current Tracks object and
         // set this text on the name TextView
-        trackTitle_txt.setText(currentTrack.getmTrack_title());
+        trackTitle_txt.setText(currentTrack.getTrack_title());
 
         // Find the TextView in the tracks_list_item.xml layout with the ID version_number
         TextView artistTextView = (TextView) listItemView.findViewById(R.id.artist_text_view);
         // Get the version number from the current Tracks object and
         // set this text on the number TextView
-        artistTextView.setText(currentTrack.getmArtist_name());
+        artistTextView.setText(currentTrack.getArtist_name());
 
         // Find the ImageView in the tracks_list_item.xml layout with the ID list_item_icon
         ImageView iconView = (ImageView) listItemView.findViewById(R.id.list_item_icon);
         // Get the image resource ID from the current Tracks object and
         // set the image to iconView
-        iconView.setImageResource(currentTrack.getmImageResourceID());
+        iconView.setImageResource(currentTrack.getImageResourceID());
 
 
         Button playButton = (Button) listItemView.findViewById(R.id.playButton);

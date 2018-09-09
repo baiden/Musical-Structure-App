@@ -24,4 +24,11 @@
     <string name="create_playlist">CREATE PLAYLIST</string>
     <string name="playlist_icon">playList icon</string>
     <string name="album_image">album image</string>
+    <string name="albumLabel">Album</string>
+    <string name="favouritesLabel">Favourites</string>
+    <string name="artistLabel">Artist</string>
+    <string name="playListLabel">Playlist</string>
+    <string name="nowPlayingLabel">Now Playing</string>
+
+
 </resources>

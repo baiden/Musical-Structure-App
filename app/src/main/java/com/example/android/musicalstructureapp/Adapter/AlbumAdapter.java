@@ -45,14 +45,14 @@ public class AlbumAdapter extends ArrayAdapter<Album> {
 
         // Find the TextView in the albums_list_item.xml layout with the ID version_name
         TextView albumTitle_txt1 = (TextView) albumListView.findViewById(R.id.albumTitle1);
-        albumTitle_txt1.setText(currentAlbum.getmAlbum_name());
+        albumTitle_txt1.setText(currentAlbum.getAlbum_name());
 
         TextView albumArtist_txt1 = (TextView) albumListView.findViewById(R.id.albumArtise1);
-        albumArtist_txt1.setText(currentAlbum.getmAlbumArtist_name());
+        albumArtist_txt1.setText(currentAlbum.getAlbumArtist_name());
 
         // Find the ImageView in the albums_list_item.xml layout with the ID list_item_icon
         ImageView albumImage1 = (ImageView) albumListView.findViewById(R.id.albumImage1);
-        albumImage1.setImageResource(currentAlbum.getmAlbumImageResourceID());
+        albumImage1.setImageResource(currentAlbum.getAlbumImageResourceID());
 
         return albumListView;
     }
