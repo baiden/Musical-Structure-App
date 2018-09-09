@@ -9,3 +9,5 @@ Create the structure of an app to play music for a user and build it out.
 **Hint:** If you encounter an installation error, Click Build tab ---> Clean Project ---> Run it again :)
 
 **Android Tags:** *#linearlayout* *#relativelayout* *#imageview* *#textview* *#animation* *#gridview* *#listview* *#customadapter* 
+
+**Link to apk:** https://drive.google.com/open?id=1t96_J-El0goVoUjMFRyzrXzFruIX2Utj
